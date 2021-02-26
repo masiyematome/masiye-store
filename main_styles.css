@@ -1,0 +1,42 @@
+*{
+    padding : 0;
+    margin : 0;
+    font-family: 'poppins',sans-serif;
+}
+
+:root{
+    --grey-color : rgb(61, 61, 61);
+    --yellow-color : #fab83e;
+}
+
+button{
+    outline : none;
+    border : none;
+    background-color: transparent;
+}
+
+
+.nav-bar{
+    padding : 5px 15px;
+    display : flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 1px 1px rgb(223, 223, 223);
+}
+
+.title-bar{
+    font-size : 24px;
+    text-decoration: none;
+    font-weight: 600;
+    color : var(--yellow-color);
+}
+
+.navbar-toggler{
+    transform: scale(1.5,1);
+    font-size: 1.2rem;
+    cursor: pointer;
+    color : var(--grey-color);
+}
+
+.navbar-toggler .fa{
+    pointer-events: none;
+}
