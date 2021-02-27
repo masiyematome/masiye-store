@@ -98,16 +98,22 @@ button{
     padding : 5px 10px;
     position : absolute;
     bottom : 40%;
+    cursor: pointer;
+    transition: all ease 0.5s;
 }
 
 .cart .fa{
-    color :var(--yellow-color);
+    color : white;
 }
 
 .cart p{
     display : inline;
     color : white;
     font-size : 15px;
+}
+
+.cart:hover{
+    background-color : var(--yellow-color)
 }
 
 .close-button {
@@ -129,6 +135,46 @@ button{
 
 /**Main part of the project starts here**/
 
+.landing-page{
+    padding : 35px 15px 60px;
+    text-align : center;
+    position : relative;
+}
+
+.landing-page::after{
+    content :'';
+    background : url("pics/landing-image.jpeg");
+    position : absolute;
+    top : 0;
+    bottom : 0;
+    left : 0;
+    right : 0;
+    opacity: 0.1;
+    pointer-events: none;
+    background-position: right;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.landing-page h1{
+    padding : 40px 0px 50px;
+    color : var(--grey-color);
+}
+
+.landing-page a{
+    font-size : 20px;
+    text-decoration: none;
+    color : white;
+    background-color : var(--yellow-color);
+    padding : 5px 15px;
+}
+
+.landing-page a:hover{
+    border : 2px solid var(--yellow-color);
+    background-color : white;
+    color : var(--yellow-color);
+}
 
 .scroll-to-top {
     position : absolute;
