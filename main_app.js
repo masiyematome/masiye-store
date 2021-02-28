@@ -2,6 +2,7 @@
 const navbar = document.querySelector(".nav-bar");
 const navbarLinks = document.querySelector(".navbar-links");
 const mainMenu = document.querySelector("#main-menu");
+const links = document.querySelectorAll("#main-menu a");
 
 navbar.addEventListener("click" , (event) => {
 
@@ -19,3 +20,8 @@ navbar.addEventListener("click" , (event) => {
     }
 })
 
+links.forEach(link => {
+    link.addEventListener("click" , function(){
+        navbarLinks.classList.remove("displaying");
+    })
+})
