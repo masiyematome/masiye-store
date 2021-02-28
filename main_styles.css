@@ -16,6 +16,10 @@ button{
     transition: all ease 0.5s;
 }
 
+html,body{
+    scroll-behavior: smooth;
+}
+
 /**Header part of the project starts here**/
 
 .nav-bar{
@@ -135,6 +139,8 @@ button{
 
 /**Main part of the project starts here**/
 
+/*landing page starte here*/
+
 .landing-page{
     padding : 35px 15px 60px;
     text-align : center;
@@ -176,8 +182,43 @@ button{
     color : var(--yellow-color);
 }
 
+/*About page starts here*/
+
+.about{
+    padding : 35px 15px 20px;
+}
+
+.image-wrapper img{
+    width: 100%;
+}
+
+.about-texts h1,p{
+    color : var(--grey-color);
+}
+
+.about-texts h1{
+    font-size : 24px;
+    padding : 15px 0px;
+}
+
+.about-texts p{
+    font-size : 15px;
+    padding : 8px 0px;
+}
+
+.about-texts span{
+    color : var(--yellow-color);
+}
+
+.about-texts .fa{
+    padding: 0px 5px 0px 0px;
+    color : var(--yellow-color);
+    font-size: 17px;
+}
+
+
 .scroll-to-top {
-    position : absolute;
+    position : fixed;
     padding : 0px 10px;
     font-size: 24px;
     bottom : 5%;
