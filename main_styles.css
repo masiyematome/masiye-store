@@ -22,6 +22,50 @@ html,body{
 
 /**Header part of the project starts here**/
 
+header{
+    position : sticky;
+    top : 0;
+    background-color : white;
+    z-index : 1;
+}
+
+.header-top {
+    padding : 8px 15px 5px;
+    display : flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-bottom : 1px solid rgb(243, 243, 243);
+}
+
+.header-top .search-button{
+    color : var(--grey-color);
+    padding : 0px 0px 0px 8px;
+}
+
+.search-button{
+    cursor: pointer;
+    font-size : 15px;
+}
+
+.search-button:hover .fa{
+    transform: scale(1.2);
+}
+
+.search-input{
+    display : none;
+    width : 100%;
+    font-size : 15px;
+    text-align: center;
+    caret-color: var(--grey-color);
+    color : var(--grey-color);
+    outline : none;
+    border : none;
+}
+
+.toggle-able{
+    display : block;
+}
+
 .nav-bar{
     padding : 5px 15px;
     display : flex;

@@ -3,6 +3,8 @@ const navbar = document.querySelector(".nav-bar");
 const navbarLinks = document.querySelector(".navbar-links");
 const mainMenu = document.querySelector("#main-menu");
 const links = document.querySelectorAll("#main-menu a");
+const searchButton = document.querySelector(".search-button");
+const searchInput = document.querySelector(".search-input");
 
 navbar.addEventListener("click" , (event) => {
 
@@ -24,4 +26,8 @@ links.forEach(link => {
     link.addEventListener("click" , function(){
         navbarLinks.classList.remove("displaying");
     })
+})
+
+searchButton.addEventListener("click", (e) => {
+    searchInput.classList.toggle("toggle-able");
 })
