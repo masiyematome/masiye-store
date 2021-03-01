@@ -7,6 +7,7 @@
 :root{
     --grey-color : rgb(61, 61, 61);
     --yellow-color : #fab83e;
+    --light-grey : rgb(243, 243, 243);
 }
 
 button{
@@ -30,21 +31,20 @@ header{
 }
 
 .header-top {
-    padding : 8px 15px 5px;
     display : flex;
     flex-direction: column;
     align-items: flex-end;
-    border-bottom : 1px solid rgb(243, 243, 243);
+    border-bottom : 1px solid var(--light-grey);
 }
 
 .header-top .search-button{
     color : var(--grey-color);
-    padding : 0px 0px 0px 8px;
 }
 
 .search-button{
     cursor: pointer;
     font-size : 15px;
+    padding : 8px 0px;
 }
 
 .search-button:hover .fa{
@@ -60,6 +60,8 @@ header{
     color : var(--grey-color);
     outline : none;
     border : none;
+    border-top : 1px solid var(--light-grey);
+    padding : 5px 0px;
 }
 
 .toggle-able{
@@ -252,6 +254,7 @@ header{
 
 .about-texts span{
     color : var(--yellow-color);
+    text-decoration: underline;
 }
 
 .about-texts .fa{
@@ -275,4 +278,72 @@ header{
 
 .scroll-to-top:hover{
     background-color: #c79029;
+}
+
+/**Contact us page starts here**/
+
+.contact{
+    padding : 35px 15px 25px;
+}
+
+.communication-channels{
+    padding : 25px 0px 45px;
+}
+
+.communication-channel{
+    padding: 0px 8px;
+    text-align: center;
+    padding : 25px 0px 0px;
+}
+
+
+.communication-channel h4{
+    color : var(--grey-color);
+    padding : 8px 0px;
+}
+
+.communication-channel p{
+    font-size : 14px;
+}
+
+.communication-channel i{
+    font-size : 30px;
+    color : var(--yellow-color);
+}
+
+.map iframe{
+    width : 100%;
+    height : 300px;
+}
+
+.footer-band{
+    padding : 5px 15px;
+    text-align : center;
+    border-top : 2px solid var(--light-grey);
+}
+
+.footer-band p{
+    font-size : 13px;
+}
+
+/**Common styling**/
+
+.page-heading{
+    color : var(--grey-color);
+    position: relative;
+    padding : 8px 0px;
+}
+
+.page-heading::after{
+    content :'';
+    border : 1px solid var(--yellow-color);
+    width : 7%;
+    position: absolute;
+    bottom : 0;
+    left : 0;
+}
+
+.intro-text{
+    font-size : 15px;
+    padding : 15px 0px;
 }
