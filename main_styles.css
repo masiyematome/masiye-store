@@ -15,6 +15,7 @@ button{
     border : none;
     background-color: transparent;
     transition: all ease 0.5s;
+    cursor: pointer;
 }
 
 html,body{
@@ -281,6 +282,56 @@ select{
     outline: none;
     border : none;
     border : 1px solid rgb(173, 173, 173);
+}
+
+.category-heading{
+    font-size : 15px;
+    display : none;
+}
+
+.store-items{
+    padding : 25px 0px 10px;
+}
+
+.store-item{
+    border-top : 1px solid var(--light-grey);
+    border-bottom : 1px solid var(--light-grey);
+}
+
+.store-item h4{
+    padding : 10px 0px;
+    color : var(--grey-color);
+    font-size : 18px;
+}
+
+.store-item img{
+    width : 100%;
+    cursor: pointer;
+}
+
+.under-image-content{
+    display: flex;
+    justify-content: space-between;
+    padding : 15px 8px;
+    color : var(--grey-color);
+}
+
+.add-to-cart{
+    border : 1px solid grey;
+    padding : 5px;
+    font-weight : 600;
+}
+
+
+.under-image-content p{
+    padding : 5px;
+    font-size : 18px;
+}
+
+.under-image-content i{
+    font-size : 20px;
+    color : var(--grey-color);
+    padding : 2px 4px 0px 0px; 
 }
 
 .scroll-to-top {
