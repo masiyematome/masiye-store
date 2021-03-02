@@ -294,8 +294,22 @@ select{
 }
 
 .store-item{
-    border-top : 1px solid var(--light-grey);
-    border-bottom : 1px solid var(--light-grey);
+    border-bottom : 1px solid rgb(204, 204, 204);
+    margin-top : 40px;
+}
+
+.store-item .item-spec{
+    padding : 10px 0px;
+    font-size : 15px;
+    display : inline;
+}
+
+.see-less , .see-more{
+    font-size : 14px;
+}
+
+.see-less{
+    display : none;
 }
 
 .store-item h4{
@@ -304,9 +318,18 @@ select{
     font-size : 18px;
 }
 
+.store-item .image-container{
+    overflow: hidden;
+}
+
 .store-item img{
     width : 100%;
     cursor: pointer;
+    transition: all ease 0.8s;
+}
+
+.store-item img:hover{
+    transform: scale(1.1);
 }
 
 .under-image-content{
@@ -326,6 +349,7 @@ select{
 .under-image-content p{
     padding : 5px;
     font-size : 18px;
+    font-weight : bold;
 }
 
 .under-image-content i{
