@@ -299,17 +299,13 @@ select{
 }
 
 .store-item .item-spec{
-    padding : 10px 0px;
+    padding : 10px 0px 15px;
     font-size : 15px;
     display : inline;
 }
 
 .see-less , .see-more{
     font-size : 14px;
-}
-
-.see-less{
-    display : none;
 }
 
 .store-item h4{

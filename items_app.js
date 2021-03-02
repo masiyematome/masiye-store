@@ -1,28 +1,18 @@
 const itemSpecifications = document.querySelectorAll(".item-spec");
-const seeMoreButtons = document.querySelectorAll(".see-more");
-const seeLessButtons = document.querySelectorAll(".see-less");
+const StoreItemList = document.querySelectorAll(".store-item");
 
 ~function () {
-    
-    const shortText = "Lorem ipsum dolor .Odio quod molestiae corporis laboriosam...";
-    const fullText = "Lorem ipsum dolor .Odio quod molestiae corporis laboriosam, vitae rerum eligendi aut voluptatibus harum incidunt cumque officia.Nulla mollitia voluptatem officia inventore reiciendis qui temporibus error.";
-    
-;    itemSpecifications.forEach(itemSpecification => {
-        itemSpecification.innerText = shortText;
-    })
 
-    seeMoreButtons.forEach(seeMoreButton => {
-        seeMoreButton.addEventListener("click" , (ev) => {
+    const shortSpecificationsText = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint quis esse nisi quos amet, cumque ad.";
+    const fullSpecificationsText = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint quis esse nisi quos amet, cumque ad. Atque nisi voluptates, totam ab laborum distinctio. Laborum blanditiis minus, quod dolorum earum laboriosam!";
 
-            ev.preventDefault();
-            
-            itemSpecifications.forEach(itemSpecification => {
-                itemSpecification.innerText = fullText;
-            })
-            
+    StoreItemList.forEach(storeItem => {
+        Array.from(storeItem.children).forEach(individualChild => {
+            if(individualChild.classList.contains("item-spec")){
+                individualChild.textContent = shortSpecificationsText;
+            }
+
         })
     })
-
-
 
 }();
