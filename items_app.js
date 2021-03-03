@@ -1,5 +1,14 @@
 const itemSpecifications = document.querySelectorAll(".item-spec");
 const StoreItemList = document.querySelectorAll(".store-item");
+const itemOptions = document.querySelectorAll("option");
+
+itemOptions.forEach(option => {
+    option.addEventListener("click", (e) => {
+        console.log(option);
+    })
+})
+
+/**A function for see more/less**/
 
 ~function () {
 
@@ -33,3 +42,4 @@ const StoreItemList = document.querySelectorAll(".store-item");
     })
 
 }();
+

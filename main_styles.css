@@ -270,7 +270,7 @@ header{
 }
 
 .store .categories-filter{
-    padding : 30px 0px;
+    padding : 30px 0px 10px;
     text-align: right;
 }
 
@@ -290,7 +290,7 @@ select{
 }
 
 .store-items{
-    padding : 25px 0px 10px;
+    
 }
 
 .store-item{
@@ -303,12 +303,8 @@ select{
     display : inline;
 }
 
-.see-more,.see-less{
+.see-more{
     font-size : 14px;
-}
-
-.see-less{
-    display : none;
 }
 
 .store-item h4{
@@ -319,7 +315,6 @@ select{
 
 .store-item .image-container{
     overflow: hidden;
-    padding : 10px 0px 0px;
 }
 
 .store-item img{
