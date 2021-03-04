@@ -353,6 +353,26 @@ select{
     padding : 2px 4px 0px 0px; 
 }
 
+.pagination{
+    padding : 25px 0px 15px;
+    text-align: center;
+}
+
+.pagination a{
+    background-color : var(--light-grey);
+    font-size : 17px;
+    font-weight : bold;
+    color : var(--grey-color);
+    padding : 8px 15px;
+    margin-left : 10px;
+    cursor: pointer;
+    transition : all ease 0.8s;
+}
+
+.pagination a:hover{
+    background-color: rgb(214, 214, 214);
+}
+
 .scroll-to-top {
     position : fixed;
     padding : 0px 10px;

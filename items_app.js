@@ -1,6 +1,7 @@
 const itemSpecifications = document.querySelectorAll(".item-spec");
-const StoreItemList = document.querySelectorAll(".store-item");
+const storeItemList = document.querySelectorAll(".store-item");
 const itemOptions = document.querySelectorAll("option");
+const pagination = document.querySelector(".pagination");
 
 itemOptions.forEach(option => {
     option.addEventListener("click", (e) => {
@@ -15,7 +16,7 @@ itemOptions.forEach(option => {
     const shortSpecificationsText = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint quis esse nisi quos amet, cumque ad.";
     const fullSpecificationsText = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint quis esse nisi quos amet, cumque ad. Atque nisi voluptates, totam ab laborum distinctio. Laborum blanditiis minus, quod dolorum earum laboriosam!";
 
-    StoreItemList.forEach(storeItem => {
+    storeItemList.forEach(storeItem => {
         Array.from(storeItem.children).forEach(individualChild => {
             if (individualChild.classList.contains("item-spec")) {
                 individualChild.textContent = shortSpecificationsText;
@@ -42,4 +43,26 @@ itemOptions.forEach(option => {
     })
 
 }();
+
+/**Pagination */
+
+~function(){
+    let numberOfItems = 0;
+    let numberOfPages;
+
+    storeItemList.forEach(storeItem => {
+        numberOfItems = numberOfItems + 1;
+    })
+
+    numberOfPages = numberOfItems / 4;
+
+    for(var i = 0 ; i < numberOfPages ; i++){
+        const pageLink = document.createElement("a");
+        pageLink.innerText = i + 1;
+        pagination.appendChild(pageLink);
+    }
+
+}();
+
+
 
