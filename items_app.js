@@ -1,7 +1,16 @@
+/**Selectors and variable declaration**/
+
 const itemSpecifications = document.querySelectorAll(".item-spec");
 const storeItemList = document.querySelectorAll(".store-item");
 const itemOptions = document.querySelectorAll("option");
 const pagination = document.querySelector(".pagination");
+let currentIndex = 0;
+
+/**Event listeners */
+
+pagination.addEventListener("click"  ,paginate);
+
+/**Functions */
 
 /**Hiding all store items */
 
@@ -50,9 +59,11 @@ const pagination = document.querySelector(".pagination");
 
 /**Pagination */
 
-pagination.addEventListener("click" , (event) => {
+function paginate(event){
+
     event.preventDefault();
     const clickedItem = event.target;
+    
 
     storeItemList.forEach((storeItem) => {
         storeItem.classList.add("displaying-items");
@@ -62,52 +73,34 @@ pagination.addEventListener("click" , (event) => {
         button.classList.remove("clicked");
     })
 
-    if(clickedItem.matches("a")){
-        switch(clickedItem.className){
-            
-            case "previous":
-
-                clickedItem.classList.add("clicked");
-                
-                break;
-
-            case "first-page":
-                clickedItem.classList.add("clicked");
-
-                for(var i = 0 ; i < 4 ; i++){
-                    storeItemList[i].classList.remove("displaying-items");
-                }
-
-                break;
-
-            case "second-page":
-                clickedItem.classList.add("clicked");
-
-                for(var i = 4 ; i < 8 ; i++){
-                    storeItemList[i].classList.remove("displaying-items");
-                }
-
-                break;
-
-            case "third-page":
-                clickedItem.classList.add("clicked");
-
-                for(var i = 8 ; i < 12 ; i++){
-                    storeItemList[i].classList.remove("displaying-items");
-                }
-
-                break;
-
-            case "next":
-                clickedItem.classList.add("clicked");
-
-                console.log("Next link was clicked");
-
-                break;
-
-        }
+    if(clickedItem.classList.contains("previous")){
+        clickedItem.classList.add("clicked");
+        console.log("I will take you to the previous page");
     }
-})
+
+    else if(clickedItem.classList.contains("first-page")){
+        clickedItem.classList.add("clicked");
+        currentIndex = 0;
+    }
+
+    else if(clickedItem.classList.contains("second-page")){
+        clickedItem.classList.add("clicked");
+        currentIndex = 1;
+    }
+
+    else if(clickedItem.classList.contains("third-page")){
+        clickedItem.classList.add("clicked");
+        currentIndex = 2;
+    }
+
+    else if(clickedItem.classList.contains("next")){
+        clickedItem.classList.add("clicked");
+        
+    }
+
+
+}
+
 
 
 
