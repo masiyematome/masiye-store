@@ -363,7 +363,7 @@ select{
     font-size : 17px;
     font-weight : bold;
     color : var(--grey-color);
-    padding : 8px 15px;
+    padding : 5px 10px;
     margin-left : 10px;
     cursor: pointer;
     transition : all ease 0.8s;
@@ -371,6 +371,10 @@ select{
 
 .pagination a:hover{
     background-color: rgb(214, 214, 214);
+}
+
+.pagination a.clicked{
+    background-color: rgb(214,214,214);
 }
 
 .scroll-to-top {

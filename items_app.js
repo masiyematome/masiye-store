@@ -64,5 +64,19 @@ itemOptions.forEach(option => {
 
 }();
 
+/**Working with the buttons on the pagination */
+
+pagination.addEventListener("click" , (event) => {
+    const clickedButton  = event.target;
+
+    Array.from(pagination.children).forEach((button) => {
+        button.classList.remove("clicked");
+    })
+
+    if(clickedButton.matches("a")){
+        clickedButton.classList.add("clicked");
+    }
+})
+
 
 
