@@ -334,6 +334,10 @@ select{
     color : var(--grey-color);
 }
 
+.store-item.displaying-items{
+    display : none;
+}
+
 .add-to-cart{
     border : 1px solid grey;
     padding : 5px;
@@ -354,7 +358,7 @@ select{
 }
 
 .pagination{
-    padding : 25px 0px 15px;
+    padding : 50px 0px 15px;
     text-align: center;
 }
 
@@ -367,6 +371,11 @@ select{
     margin-left : 10px;
     cursor: pointer;
     transition : all ease 0.8s;
+    text-decoration: none;
+}
+
+.pagination a .fa{
+    pointer-events: none;
 }
 
 .pagination a:hover{

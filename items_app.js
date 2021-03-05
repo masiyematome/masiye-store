@@ -3,11 +3,15 @@ const storeItemList = document.querySelectorAll(".store-item");
 const itemOptions = document.querySelectorAll("option");
 const pagination = document.querySelector(".pagination");
 
-itemOptions.forEach(option => {
-    option.addEventListener("click", (e) => {
-        console.log(option);
-    })
-})
+/**Hiding all store items */
+
+~function(){
+
+    for(var i = 4 ; i < 12 ; i++){
+        storeItemList[i].classList.add("displaying-items");
+    }
+
+}();
 
 /**A function for see more/less**/
 
@@ -46,37 +50,46 @@ itemOptions.forEach(option => {
 
 /**Pagination */
 
-~function(){
-    let numberOfItems = 0;
-    let numberOfPages;
-
-    storeItemList.forEach(storeItem => {
-        numberOfItems = numberOfItems + 1;
-    })
-
-    numberOfPages = numberOfItems / 4;
-
-    for(var i = 0 ; i < numberOfPages ; i++){
-        const pageLink = document.createElement("a");
-        pageLink.innerText = i + 1;
-        pagination.appendChild(pageLink);
-    }
-
-}();
-
-/**Working with the buttons on the pagination */
-
 pagination.addEventListener("click" , (event) => {
-    const clickedButton  = event.target;
+    event.preventDefault();
+    const clickedItem = event.target;
 
-    Array.from(pagination.children).forEach((button) => {
-        button.classList.remove("clicked");
+    storeItemList.forEach((storeItem) => {
+        storeItem.classList.add("displaying-items");
     })
 
-    if(clickedButton.matches("a")){
-        clickedButton.classList.add("clicked");
+    if(clickedItem.matches("a")){
+        switch(clickedItem.className){
+            case "previous":
+                
+                break;
+
+            case "first-page":
+                for(var i = 0 ; i < 4 ; i++){
+                    storeItemList[i].classList.remove("displaying-items");
+                }
+                break;
+
+            case "second-page":
+                for(var i = 4 ; i < 8 ; i++){
+                    storeItemList[i].classList.remove("displaying-items");
+                }
+                break;
+
+            case "third-page":
+                for(var i = 8 ; i < 12 ; i++){
+                    storeItemList[i].classList.remove("displaying-items");
+                }
+                break;
+
+            case "next":
+                console.log("Next link was clicked");
+                break;
+
+        }
     }
 })
+
 
 
 
