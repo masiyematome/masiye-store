@@ -58,32 +58,51 @@ pagination.addEventListener("click" , (event) => {
         storeItem.classList.add("displaying-items");
     })
 
+    Array.from(pagination.children).forEach(button => {
+        button.classList.remove("clicked");
+    })
+
     if(clickedItem.matches("a")){
         switch(clickedItem.className){
+            
             case "previous":
+
+                clickedItem.classList.add("clicked");
                 
                 break;
 
             case "first-page":
+                clickedItem.classList.add("clicked");
+
                 for(var i = 0 ; i < 4 ; i++){
                     storeItemList[i].classList.remove("displaying-items");
                 }
+
                 break;
 
             case "second-page":
+                clickedItem.classList.add("clicked");
+
                 for(var i = 4 ; i < 8 ; i++){
                     storeItemList[i].classList.remove("displaying-items");
                 }
+
                 break;
 
             case "third-page":
+                clickedItem.classList.add("clicked");
+
                 for(var i = 8 ; i < 12 ; i++){
                     storeItemList[i].classList.remove("displaying-items");
                 }
+
                 break;
 
             case "next":
+                clickedItem.classList.add("clicked");
+
                 console.log("Next link was clicked");
+
                 break;
 
         }
