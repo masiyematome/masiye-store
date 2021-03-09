@@ -307,6 +307,14 @@ select{
     font-size : 14px;
 }
 
+.second-text-span{
+    display : none;
+}
+
+.second-text-span.show-full-text{
+    display: block;
+}
+
 .store-item h4{
     padding : 10px 0px;
     color : var(--grey-color);
