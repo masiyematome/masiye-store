@@ -54,47 +54,89 @@ storeItems.forEach(storeItem => {
     });
 });
 
-/**Pagination starts here**/
+/******Pagination starts here*******/
+
+/*Hide all the items in the store*/
+
+~function hideAllItems(){
+
+    for(var itemIndex = 0 ; itemIndex < storeItems.length ; itemIndex++){
+        storeItems[itemIndex].classList.add("displaying-items");
+    }
+
+}();
 
 function paginate(ev){
     ev.preventDefault();
     const clickedButton = ev.target;
 
+    const functions = [
+
+        {
+            page : function(){
+                console.log("I am the first page");
+            },
+        },
+
+        {
+            page : function(){
+                console.log("I am the second page");
+            },
+        },
+
+        {
+            page : function(){
+                console.log("I am the third page");
+            },
+        },
+
+    ];
+
 
     if(clickedButton.classList.contains("previous")){
         if(currentIndex == 0){
-            console.log("I am at " + currentIndex + " so, I can not go back");
+            
         }
 
         else{
             currentIndex = currentIndex - 1;
-            console.log(currentIndex);
+            
+            functions[currentIndex].page();
+
         }
     }
 
     else if(clickedButton.classList.contains("first-page")){
         currentIndex = 0;
-        console.log("I am at index " + currentIndex);
+
+        functions[currentIndex].page();
+        
     }
 
     else if(clickedButton.classList.contains("second-page")){
         currentIndex = 1;
-        console.log("I am at index " + currentIndex);
+
+        functions[currentIndex].page();
+
     }
 
     else if(clickedButton.classList.contains("third-page")){
         currentIndex = 2;
-        console.log("I am at index " + currentIndex);
+
+        functions[currentIndex].page();
+
     }
 
     else if(clickedButton.classList.contains("next")){
         if(currentIndex == 2) {
-            console.log("I am " + currentIndex + " So i can not go forward");
+            
         }
 
         else{
             currentIndex = currentIndex + 1;
-            console.log(currentIndex);
+            
+            functions[currentIndex].page();
+
         }
     }
 
