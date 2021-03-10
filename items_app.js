@@ -60,7 +60,7 @@ storeItems.forEach(storeItem => {
 
 ~function hideAllItems(){
 
-    for(var itemIndex = 0 ; itemIndex < storeItems.length ; itemIndex++){
+    for(var itemIndex = 4 ; itemIndex < storeItems.length ; itemIndex++){
         storeItems[itemIndex].classList.add("displaying-items");
     }
 
@@ -74,19 +74,58 @@ function paginate(ev){
 
         {
             page : function(){
-                console.log("I am the first page");
+                for(itemIndex = 0 ;  itemIndex < 4 ; itemIndex++){
+                    storeItems[itemIndex].classList.remove("displaying-items");
+                    console.log(itemIndex);
+                }
+
+                for(itemIndex = 4 ;  itemIndex < 8 ; itemIndex++){
+                    storeItems[itemIndex].classList.add("displaying-items");
+                    console.log(itemIndex);
+                }
+
+                for(itemIndex = 8 ;  itemIndex < 12 ; itemIndex++){
+                    storeItems[itemIndex].classList.add("displaying-items");
+                    console.log(itemIndex);
+                }
             },
         },
 
         {
             page : function(){
-                console.log("I am the second page");
+                for(itemIndex = 4 ;  itemIndex < 8 ; itemIndex++){
+                    storeItems[itemIndex].classList.remove("displaying-items");
+                    console.log(itemIndex);
+                }
+
+                for(itemIndex = 0 ;  itemIndex < 4 ; itemIndex++){
+                    storeItems[itemIndex].classList.add("displaying-items");
+                    console.log(itemIndex);
+                }
+
+                for(itemIndex = 8 ;  itemIndex < 12 ; itemIndex++){
+                    storeItems[itemIndex].classList.add("displaying-items");
+                    console.log(itemIndex);
+                }
             },
         },
 
         {
             page : function(){
-                console.log("I am the third page");
+                for(itemIndex = 8 ;  itemIndex < 12 ; itemIndex++){
+                    storeItems[itemIndex].classList.remove("displaying-items");
+                    console.log(itemIndex);
+                }
+
+                for(itemIndex = 4 ;  itemIndex < 8 ; itemIndex++){
+                    storeItems[itemIndex].classList.add("displaying-items");
+                    console.log(itemIndex);
+                }
+
+                for(itemIndex = 0 ;  itemIndex < 4 ; itemIndex++){
+                    storeItems[itemIndex].classList.add("displaying-items");
+                    console.log(itemIndex);
+                }
             },
         },
 
