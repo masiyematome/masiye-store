@@ -58,7 +58,7 @@ storeItems.forEach(storeItem => {
 
 /*Hide all the items in the store*/
 
-~function hideAllItems(){
+~function hideItems(){
 
     for(var itemIndex = 4 ; itemIndex < storeItems.length ; itemIndex++){
         storeItems[itemIndex].classList.add("displaying-items");
@@ -70,66 +70,34 @@ function paginate(ev){
     ev.preventDefault();
     const clickedButton = ev.target;
 
-    const functions = [
+    const functionObject = {
 
-        {
-            page : function(){
-                for(itemIndex = 0 ;  itemIndex < 4 ; itemIndex++){
+        
+        page: function () {
+            for(var itemIndex = 0 ; itemIndex < storeItems.length ; itemIndex++){
+                storeItems[itemIndex].classList.add("displaying-items");
+            }
+
+            if (currentIndex == 0) {
+                for (itemIndex = 0; itemIndex < 4; itemIndex++) {
                     storeItems[itemIndex].classList.remove("displaying-items");
-                    console.log(itemIndex);
                 }
+            }
 
-                for(itemIndex = 4 ;  itemIndex < 8 ; itemIndex++){
-                    storeItems[itemIndex].classList.add("displaying-items");
-                    console.log(itemIndex);
-                }
-
-                for(itemIndex = 8 ;  itemIndex < 12 ; itemIndex++){
-                    storeItems[itemIndex].classList.add("displaying-items");
-                    console.log(itemIndex);
-                }
-            },
-        },
-
-        {
-            page : function(){
-                for(itemIndex = 4 ;  itemIndex < 8 ; itemIndex++){
+            else if (currentIndex == 1) {
+                for (itemIndex = 4; itemIndex < 8; itemIndex++) {
                     storeItems[itemIndex].classList.remove("displaying-items");
-                    console.log(itemIndex);
                 }
+            }
 
-                for(itemIndex = 0 ;  itemIndex < 4 ; itemIndex++){
-                    storeItems[itemIndex].classList.add("displaying-items");
-                    console.log(itemIndex);
-                }
-
-                for(itemIndex = 8 ;  itemIndex < 12 ; itemIndex++){
-                    storeItems[itemIndex].classList.add("displaying-items");
-                    console.log(itemIndex);
-                }
-            },
-        },
-
-        {
-            page : function(){
-                for(itemIndex = 8 ;  itemIndex < 12 ; itemIndex++){
+            else if (currentIndex == 2) {
+                for (itemIndex = 8; itemIndex < 12; itemIndex++) {
                     storeItems[itemIndex].classList.remove("displaying-items");
-                    console.log(itemIndex);
                 }
+            }
 
-                for(itemIndex = 4 ;  itemIndex < 8 ; itemIndex++){
-                    storeItems[itemIndex].classList.add("displaying-items");
-                    console.log(itemIndex);
-                }
-
-                for(itemIndex = 0 ;  itemIndex < 4 ; itemIndex++){
-                    storeItems[itemIndex].classList.add("displaying-items");
-                    console.log(itemIndex);
-                }
-            },
-        },
-
-    ];
+        }
+    };
 
 
     if(clickedButton.classList.contains("previous")){
@@ -140,7 +108,7 @@ function paginate(ev){
         else{
             currentIndex = currentIndex - 1;
             
-            functions[currentIndex].page();
+            functionObject.page();
 
         }
     }
@@ -148,21 +116,21 @@ function paginate(ev){
     else if(clickedButton.classList.contains("first-page")){
         currentIndex = 0;
 
-        functions[currentIndex].page();
+        functionObject.page();
         
     }
 
     else if(clickedButton.classList.contains("second-page")){
         currentIndex = 1;
 
-        functions[currentIndex].page();
+        functionObject.page();
 
     }
 
     else if(clickedButton.classList.contains("third-page")){
         currentIndex = 2;
 
-        functions[currentIndex].page();
+        functionObject.page();
 
     }
 
@@ -174,7 +142,7 @@ function paginate(ev){
         else{
             currentIndex = currentIndex + 1;
             
-            functions[currentIndex].page();
+            functionObject.page();
 
         }
     }
