@@ -4,6 +4,7 @@ const storeItems = document.querySelectorAll(".store-item");
 const itemSpecs = document.querySelectorAll(".item-spec");
 const pagination = document.querySelector(".pagination");
 const itemOptions = document.querySelector(".categories-filter");
+const storeSection = document.querySelector("#Store");
 let currentIndex = 0;
 
 //Event Listeners
@@ -96,6 +97,9 @@ function paginate(ev){
                     storeItems[itemIndex].classList.remove("displaying-items");
                 }
             }
+
+        storeSection.scrollIntoView();
+
 
         }
     };
