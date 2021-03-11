@@ -3,12 +3,13 @@
 const storeItems = document.querySelectorAll(".store-item");
 const itemSpecs = document.querySelectorAll(".item-spec");
 const pagination = document.querySelector(".pagination");
+const itemOptions = document.querySelector(".categories-filter");
 let currentIndex = 0;
-
 
 //Event Listeners
 
 pagination.addEventListener("click" , paginate);
+itemOptions.addEventListener("click" , filterStoreItems);
 
 //Functions
 
@@ -145,6 +146,77 @@ function paginate(ev){
             functionObject.page();
 
         }
+    }
+
+}
+
+/**** Function that displays only the store items chosen by the user on the filter***/ 
+
+function filterStoreItems(event) {
+    const choosenOption = event.target;
+
+    switch (choosenOption.value) {
+        case "all":
+            storeItems.forEach((storeItem) => {
+                storeItem.classList.remove("displaying-items");
+            })
+            break;
+
+        case "phones":
+            storeItems.forEach((storeItem) => {
+                if(storeItem.classList.contains("phone")){
+                    storeItem.classList.remove("displaying-items");
+                }
+                else{
+                    storeItem.classList.add("displaying-items");
+                }
+            });
+            
+            break;
+
+        case "backpacks":
+            storeItems.forEach((storeItem) => {
+                if(storeItem.classList.contains("backpack")){
+                    storeItem.classList.remove("displaying-items");
+                }
+                else{
+                    storeItem.classList.add("displaying-items");
+                }
+            })
+            break;
+
+        case "sneakers":
+            storeItems.forEach((storeItem) => {
+                if(storeItem.classList.contains("sneakers")){
+                    storeItem.classList.remove("displaying-items");
+                }
+                else{
+                    storeItem.classList.add("displaying-items");
+                }
+            })
+            break;
+
+        case "watches":
+            storeItems.forEach((storeItem) => {
+                if(storeItem.classList.contains("watch")){
+                    storeItem.classList.remove("displaying-items");
+                }
+                else{
+                    storeItem.classList.add("displaying-items");
+                }
+            })
+            break;
+
+        case "headwear":
+            storeItems.forEach((storeItem) => {
+                if(storeItem.classList.contains("headwear")){
+                    storeItem.classList.remove("displaying-items");
+                }
+                else{
+                    storeItem.classList.add("displaying-items");
+                }
+            })
+            break;
     }
 
 }
