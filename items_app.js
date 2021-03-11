@@ -157,9 +157,10 @@ function filterStoreItems(event) {
 
     switch (choosenOption.value) {
         case "all":
-            storeItems.forEach((storeItem) => {
-                storeItem.classList.remove("displaying-items");
-            })
+            for (itemIndex = 0; itemIndex < 4; itemIndex++) {
+                storeItems[itemIndex].classList.remove("displaying-items");
+            }
+            pagination.style.display = "block";
             break;
 
         case "phones":
@@ -171,7 +172,7 @@ function filterStoreItems(event) {
                     storeItem.classList.add("displaying-items");
                 }
             });
-            
+            pagination.style.display = "none";
             break;
 
         case "backpacks":
@@ -182,7 +183,8 @@ function filterStoreItems(event) {
                 else{
                     storeItem.classList.add("displaying-items");
                 }
-            })
+            });
+            pagination.style.display = "none";
             break;
 
         case "sneakers":
@@ -193,7 +195,8 @@ function filterStoreItems(event) {
                 else{
                     storeItem.classList.add("displaying-items");
                 }
-            })
+            });
+            pagination.style.display = "none";
             break;
 
         case "watches":
@@ -204,7 +207,8 @@ function filterStoreItems(event) {
                 else{
                     storeItem.classList.add("displaying-items");
                 }
-            })
+            });
+            pagination.style.display = "none";
             break;
 
         case "headwear":
@@ -215,7 +219,8 @@ function filterStoreItems(event) {
                 else{
                     storeItem.classList.add("displaying-items");
                 }
-            })
+            });
+            pagination.style.display = "none";
             break;
     }
 
