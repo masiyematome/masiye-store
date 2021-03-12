@@ -159,73 +159,79 @@ function paginate(ev){
 function filterStoreItems(event) {
     const choosenOption = event.target;
 
-    switch (choosenOption.value) {
-        case "all":
-            for (itemIndex = 0; itemIndex < 4; itemIndex++) {
-                storeItems[itemIndex].classList.remove("displaying-items");
-            }
-            pagination.style.display = "block";
-            break;
+        switch (choosenOption.value) {
+    
+            case "all":
 
-        case "phones":
-            storeItems.forEach((storeItem) => {
-                if(storeItem.classList.contains("phone")){
-                    storeItem.classList.remove("displaying-items");
+                for (itemIndex = 0; itemIndex < storeItems.length; itemIndex++) {
+                    storeItems[itemIndex].classList.add("displaying-items");
                 }
-                else{
-                    storeItem.classList.add("displaying-items");
-                }
-            });
-            pagination.style.display = "none";
-            break;
 
-        case "backpacks":
-            storeItems.forEach((storeItem) => {
-                if(storeItem.classList.contains("backpack")){
-                    storeItem.classList.remove("displaying-items");
+                for (itemIndex = 0; itemIndex < 4; itemIndex++) {
+                    storeItems[itemIndex].classList.remove("displaying-items");
                 }
-                else{
-                    storeItem.classList.add("displaying-items");
-                }
-            });
-            pagination.style.display = "none";
-            break;
-
-        case "sneakers":
-            storeItems.forEach((storeItem) => {
-                if(storeItem.classList.contains("sneakers")){
-                    storeItem.classList.remove("displaying-items");
-                }
-                else{
-                    storeItem.classList.add("displaying-items");
-                }
-            });
-            pagination.style.display = "none";
-            break;
-
-        case "watches":
-            storeItems.forEach((storeItem) => {
-                if(storeItem.classList.contains("watch")){
-                    storeItem.classList.remove("displaying-items");
-                }
-                else{
-                    storeItem.classList.add("displaying-items");
-                }
-            });
-            pagination.style.display = "none";
-            break;
-
-        case "headwear":
-            storeItems.forEach((storeItem) => {
-                if(storeItem.classList.contains("headwear")){
-                    storeItem.classList.remove("displaying-items");
-                }
-                else{
-                    storeItem.classList.add("displaying-items");
-                }
-            });
-            pagination.style.display = "none";
-            break;
-    }
+                pagination.style.display = "block";
+                break;
+    
+            case "phones":
+                storeItems.forEach((storeItem) => {
+                    if(storeItem.classList.contains("phone")){
+                        storeItem.classList.remove("displaying-items");
+                    }
+                    else{
+                        storeItem.classList.add("displaying-items");
+                    }
+                });
+                pagination.style.display = "none";
+                break;
+    
+            case "backpacks":
+                storeItems.forEach((storeItem) => {
+                    if(storeItem.classList.contains("backpack")){
+                        storeItem.classList.remove("displaying-items");
+                    }
+                    else{
+                        storeItem.classList.add("displaying-items");
+                    }
+                });
+                pagination.style.display = "none";
+                break;
+    
+            case "sneakers":
+                storeItems.forEach((storeItem) => {
+                    if(storeItem.classList.contains("sneakers")){
+                        storeItem.classList.remove("displaying-items");
+                    }
+                    else{
+                        storeItem.classList.add("displaying-items");
+                    }
+                });
+                pagination.style.display = "none";
+                break;
+    
+            case "watches":
+                storeItems.forEach((storeItem) => {
+                    if(storeItem.classList.contains("watch")){
+                        storeItem.classList.remove("displaying-items");
+                    }
+                    else{
+                        storeItem.classList.add("displaying-items");
+                    }
+                });
+                pagination.style.display = "none";
+                break;
+    
+            case "headwear":
+                storeItems.forEach((storeItem) => {
+                    if(storeItem.classList.contains("headwear")){
+                        storeItem.classList.remove("displaying-items");
+                    }
+                    else{
+                        storeItem.classList.add("displaying-items");
+                    }
+                });
+                pagination.style.display = "none";
+                break;
+        }
 
 }
