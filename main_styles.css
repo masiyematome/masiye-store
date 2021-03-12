@@ -348,6 +348,20 @@ select{
     font-weight : 600;
 }
 
+.add-to-cart .fa{
+    pointer-events: none;
+}
+
+.add-to-cart:hover{
+    background-color : rgb(34, 34, 34);
+    color : white;
+    border : 1px solid rgb(34, 34, 34);
+}
+
+.add-to-cart:hover .fa{
+    color : white;
+    transition: all ease 0.8s;
+}
 
 .under-image-content p{
     padding : 5px;
