@@ -5,16 +5,22 @@ let numberOfItems = 0;
 const totalPriceText = document.querySelector(".total-price-text");
 let totalPrice = 0;
 
-
+const amount = document.querySelectorAll(".amount");
 
 storeItems.forEach((storeItem) => {
     storeItem.addEventListener("click" , (e) => {
         
         const clicked = e.target;
+        const underImageContent = storeItem.children[4];
+        const itemPrice = underImageContent.children[0];
+        const itemPriceAmount = itemPrice.children[1];
+
 
         if (clicked.classList.contains("add-to-cart")) {
             numberOfItems = numberOfItems + 1;
-            totalPrice = totalPrice + parseFloat(storeItem.children[4].children[0].innerText);
+
+            totalPrice = totalPrice + parseFloat(itemPriceAmount.innerText);
+            
             clicked.classList.add("added-to-cart");
 
             clicked.innerHTML = '<i class = "fa fa-check"></i>' + "Added to Cart";
