@@ -363,6 +363,18 @@ select{
     transition: all ease 0.8s;
 }
 
+.add-to-cart.added-to-cart{
+    background-color : var(--yellow-color);
+    color : white;
+    border : 1px solid white;
+}
+
+.add-to-cart.added-to-cart .fa{
+    color : white;
+    font-size : 1rem;
+    font-weight: 600;
+}
+
 .under-image-content p{
     padding : 5px;
     font-size : 18px;
