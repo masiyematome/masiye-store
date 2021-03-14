@@ -45,7 +45,7 @@ header{
 
 .search-button{
     cursor: pointer;
-    font-size : 15px;
+    font-size : 0.9rem;
     padding : 8px 0px;
 }
 
@@ -78,7 +78,7 @@ header{
 }
 
 .title-bar{
-    font-size : 24px;
+    font-size : 1.2rem;
     text-decoration: none;
     font-weight: 600;
     color : var(--yellow-color);
@@ -86,7 +86,7 @@ header{
 
 .navbar-toggler{
     transform: scale(1.5,1);
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     color : var(--grey-color);
 }
@@ -127,13 +127,13 @@ header{
 
 
 #main-menu li{
-    padding : 8px 0px;
+    padding : 5px 0px;
 }
 
 #main-menu a{
     text-decoration: none;
     color : white;
-    font-size : 18px;
+    font-size : 1rem;
     transition: all ease 0.5s;
 }
 
@@ -156,12 +156,13 @@ header{
 
 .cart .fa{
     color : white;
+    font-size: 0.8rem;
 }
 
 .cart p{
     display : inline;
     color : white;
-    font-size : 15px;
+    font-size : 0.8rem;
 }
 
 .cart:hover{
@@ -190,7 +191,7 @@ header{
 /*landing page starte here*/
 
 .landing-page{
-    padding : 35px 15px 60px;
+    padding : 35px 15px 30px;
     text-align : center;
     position : relative;
 }
@@ -214,10 +215,11 @@ header{
 .landing-page h1{
     padding : 40px 0px 50px;
     color : var(--grey-color);
+    font-size : 1.6rem;
 }
 
 .landing-page a{
-    font-size : 20px;
+    font-size : 1.1rem;
     text-decoration: none;
     color : white;
     background-color : var(--yellow-color);
@@ -233,7 +235,7 @@ header{
 /*About page starts here*/
 
 .about{
-    padding : 35px 15px 20px;
+    padding : 35px 15px 0px;
 }
 
 .image-wrapper img{
@@ -245,12 +247,12 @@ header{
 }
 
 .about-texts h1{
-    font-size : 24px;
+    font-size : 1.3rem;
     padding : 15px 0px;
 }
 
 .about-texts p{
-    font-size : 15px;
+    font-size : 0.8rem;
     padding : 8px 0px;
 }
 
@@ -265,28 +267,36 @@ header{
     font-size: 17px;
 }
 
+/**Store page starts here**/
+
 .store{
-    padding : 35px 15px 25px;
+    padding : 20px 15px 25px;
 }
 
 .store .categories-filter{
-    padding : 30px 0px 10px;
+    padding : 30px 0px 0px;
     text-align: right;
 }
 
 .categories-filter label{
     color : var(--grey-color);
+    font-size : 0.8rem;
 }
 
 select{
     outline: none;
     border : none;
     border : 1px solid rgb(173, 173, 173);
+    font-size : 0.8rem;
 }
 
 .category-heading{
     font-size : 15px;
     display : none;
+}
+
+.store-item:nth-of-type(1){
+    margin-top : 30px;
 }
 
 .store-item{
@@ -295,7 +305,7 @@ select{
 }
 
 .store-item .item-spec{
-    font-size : 14px;
+    font-size : 0.8rem;
     display : inline;
 }
 
@@ -314,7 +324,7 @@ select{
 .store-item h4{
     padding : 10px 0px;
     color : var(--grey-color);
-    font-size : 18px;
+    font-size : 1rem;
 }
 
 .store-item .image-container{
@@ -338,18 +348,24 @@ select{
     color : var(--grey-color);
 }
 
+.currency,.amount{
+    font-size : 1rem;
+}
+
 .store-item.displaying-items{
     display : none;
 }
 
 .add-to-cart{
     border : 1px solid grey;
-    padding : 5px;
+    padding : 0px 5px;
     font-weight : 600;
+    font-size: 0.8rem;
 }
 
 .add-to-cart .fa{
     pointer-events: none;
+    font-size : 0.9rem;
 }
 
 .add-to-cart:hover{
@@ -394,7 +410,7 @@ select{
 
 .pagination a{
     background-color : var(--light-grey);
-    font-size : 17px;
+    font-size : 0.9rem;
     font-weight : bold;
     color : var(--grey-color);
     padding : 5px 10px;
@@ -435,7 +451,7 @@ select{
 /**Testimonials page starts here**/
 
 .testimonials-page{
-    padding : 30px 15px 25px;
+    padding : 30px 15px 0px;
 }
 
 .testimonials{
@@ -443,22 +459,22 @@ select{
 }
 
 .testimonial{
-    display: flex;
+    display : flex;
     justify-content: space-between;
     padding : 15px 10px;
     background-color: rgb(252, 252, 252);
 }
 
+.testimonial-image{
+    padding : 0px 15px 0px 0px;
+}
+
 .testimonial img{
-    width : 80px;
-    height : 80px;
+    width : 60px;
+    height : 60px;
     border : 2px solid var(--yellow-color);
     border-radius: 50%;
     padding : 5px;
-}
-
-.testimonial-texts{
-    flex-basis: 75%;
 }
 
 .testimonial-texts h4, .testimonial-texts p{
@@ -466,14 +482,15 @@ select{
 }
 
 .testimonial .customer-text{
-    font-size : 14px;
+    font-size : 0.8rem;
 }
 
 .testimonial .customer-name{
     padding : 0px 0px 8px;
+    font-size : 1rem;
 }
 
-.testimonial:nth-child(even) img{
+.testimonial:nth-child(even) .testimonial-image{
     order : 1;
 }
 
@@ -524,7 +541,7 @@ select{
 }
 
 .footer-band p{
-    font-size : 13px;
+    font-size : 0.7rem;
 }
 
 /**Common styling**/
@@ -533,6 +550,7 @@ select{
     color : var(--grey-color);
     position: relative;
     padding : 8px 0px;
+    font-size : 1.4rem;
 }
 
 .page-heading::after{
@@ -545,6 +563,6 @@ select{
 }
 
 .intro-text{
-    font-size : 15px;
+    font-size : 0.8rem;
     padding : 15px 0px;
 }
