@@ -2,10 +2,7 @@
 //Selectors and variable declarations
 
 const openCartButton = document.querySelector(".cart");
-const cartPage = document.querySelector(".cart-page");
-
-const allLinks = document.querySelectorAll("#main-menu a");
-
+const cartModal = document.querySelector(".cart-page");
 
 const numberOfItemsText = document.querySelector(".number-of-items-text");
 let numberOfItems = 0;
@@ -17,19 +14,10 @@ const amount = document.querySelectorAll(".amount");
 
 //Functions
 
-/*A function that removes the modal on the click of a link*/
-
-allLinks.forEach((link) => {
-    link.addEventListener("click" , ()=> {
-        cartPage.style.display = "none";
-    })
+openCartButton.addEventListener("click" , ()=> {
+    cartModal.style.display = "block";
 })
 
-/**A button for cart modal */
-
-openCartButton.addEventListener("click" , () => {
-    cartPage.style.display = "block";
-})
 
 /**A button for cart calculations */
 

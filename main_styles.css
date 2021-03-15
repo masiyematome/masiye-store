@@ -188,10 +188,6 @@ header{
 
 /**Main part of the project starts here**/
 
-main{
-    position: relative;
-}
-
 /*landing page starte here*/
 
 .landing-page{
@@ -505,30 +501,61 @@ select{
 /**Cart page starts here**/
 
 .cart-page{
-    position : absolute;
-    top : 0;
-    left : 0;
-    background-color : white;
-    height : 100%;
-    width : 100%;
-    padding : 35px 15px 25px;
-    display : none;
+    /* display : none; */
+    padding : 15px;
 }
 
-.cart-page h2{
-    font-size : 1.4rem;
+.cart-heading {
+    border-bottom: 2px solid var(--light-grey);
+    display : flex;
+    justify-content: space-between;
+}
+
+.cart-heading h2{
     color : var(--grey-color);
     position : relative;
-    padding : 0px 0px 10px;
+    padding : 0px 0px 15px;
 }
 
-.cart-page h2::after{
-    content : '';
-    position : absolute;
-    border : 1px solid var(--light-grey);
-    width : 100%;
-    left : 0;
-    bottom : 0;
+.close-cart{
+    font-size : 2rem;
+    color : var(--grey-color);
+}
+
+.close-cart:hover{
+    color : grey;
+}
+
+.cart-body{
+    min-height: 200px;
+}
+
+.cart-footer{
+    border-top: 2px solid var(--light-grey);
+    display : flex;
+    flex-direction: column;
+}
+
+.cart-footer p{
+    padding : 15px 0px;
+    display : flex;
+}
+
+.cart-footer p .total-price-text{
+    margin-left : auto;
+    font-size : 1.2rem;
+}
+
+.proceed-to-checkout{
+    background-color: var(--yellow-color);
+    padding : 5px;
+    color : white;
+    font-size : 1rem;
+    border-radius : 8px;
+}
+
+.proceed-to-checkout:hover{
+    background-color : #d8a13a;
 }
 
 /**Contact us page starts here**/
