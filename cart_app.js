@@ -4,10 +4,10 @@
 const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page");
 
-const numberOfItemsText = document.querySelector(".number-of-items-text");
+const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;
 
-const totalPriceText = document.querySelector(".total-price-text");
+const totalPriceTexts = document.querySelectorAll(".total-price-text");
 let totalPrice = 0;
 
 const amount = document.querySelectorAll(".amount");
@@ -46,8 +46,20 @@ storeItems.forEach((storeItem) => {
 
         }
 
-        numberOfItemsText.innerText = numberOfItems + " Items - R";
-        totalPriceText.innerText = (totalPrice).toFixed(2);
+
+        if (numberOfItems == 0 || numberOfItems > 1) {
+            numberOfItemsText[0].innerText = numberOfItems + " Items - ";
+            numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
+        }
+
+        else {
+            numberOfItemsText[0].innerText = numberOfItems + " Item - ";
+            numberOfItemsText[1].innerText = "(" + numberOfItems + " item" + ")";
+        }
+
+        totalPriceTexts.forEach((totalPriceText) => {
+            totalPriceText.innerText = "  R" + (totalPrice).toFixed(2);
+        })
 
     });
 });
