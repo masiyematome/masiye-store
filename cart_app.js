@@ -5,6 +5,7 @@ const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page-wrapper");
 const closeCartButton = document.querySelector(".close-cart");
 const dimmers = document.querySelectorAll(".dimmer");
+const addedItemsCard = document.querySelector(".added-items");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;
@@ -62,6 +63,20 @@ storeItems.forEach((storeItem) => {
                 clicked.classList.remove("added-to-cart");
                 clicked.innerHTML = '<i class = "fa fa-cart-plus"></i>' + 'Add to cart';
             }, 1500);
+
+             /**Add the clicked item to cart **/
+
+                const storeItemName = storeItem.children[0].innerText;
+
+                const itemInCart = document.createElement("div");
+                itemInCart.className = "new-cart-item";
+                
+                const itemInCartName = document.createElement("h4");
+                itemInCartName.className = "new-item-name";
+                itemInCartName.innerText = storeItemName;
+                itemInCart.appendChild(itemInCartName);
+    
+                addedItemsCard.appendChild(itemInCartName);
 
         }
 

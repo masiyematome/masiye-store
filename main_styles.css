@@ -542,8 +542,32 @@ select{
 .cart-body h2{
     color : var(--grey-color);
     position : relative;
-    padding : 0px 0px 15px;
+    padding : 0px 0px 5px;
     font-size : 1.4rem;
+}
+
+.cart-body h2::after{
+    content: "";
+    position : absolute;
+    width : 100%;
+    border : 1px solid var(--light-grey);
+    left : 0;
+    bottom : 0;
+}
+
+.cart-body .added-items{
+    padding : 18px 0px;
+}
+
+.cart-item-image-holder{
+    width : 40px;
+    height: 40px;
+    border : 1px solid teal;
+}
+
+.cart-item-image{
+    width : 100%;
+    height : 40px;
 }
 
 .close-cart{
