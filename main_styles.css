@@ -447,6 +447,7 @@ select{
     background-color: var(--yellow-color);
     color : white;
     transition: all ease 0.5s;
+    z-index : 1;
 }
 
 .scroll-to-top:hover{
@@ -505,8 +506,24 @@ select{
 
 /**Cart page starts here**/
 
+.cart-page-wrapper{
+    background-color : rgba(0,0,0,0.7);
+    position : absolute;
+    top : 0;
+    left : 0;
+    height : 100%;
+    width : 100%;
+    z-index : 3;
+    opacity : 0;
+    pointer-events: none;
+}
+
+.cart-page-wrapper.opened{
+    opacity: 1;
+    pointer-events: all;
+}
+
 .cart-page{
-    display : none;
     padding : 15px;
     position: fixed;
     top : 50%;
@@ -514,10 +531,6 @@ select{
     transform: translate(-50%,-50%);
     width : 95%;
     background-color : white;
-}
-
-.cart-page.opened{
-    display : block;
 }
 
 .cart-heading {
@@ -540,6 +553,10 @@ select{
     background-color : var(--yellow-color);
     align-self: center;
     padding : 8px;
+}
+
+.close-cart .fa{
+    pointer-events: none;
 }
 
 .close-cart:hover{
@@ -582,6 +599,10 @@ select{
 }
 
 /**Contact us page starts here**/
+
+footer{
+    position: relative;
+}
 
 .contact{
     padding : 35px 15px 25px;
@@ -627,6 +648,7 @@ select{
     font-size : 0.7rem;
 }
 
+
 /**Common styling**/
 
 .page-heading{
@@ -648,4 +670,21 @@ select{
 .intro-text{
     font-size : 0.8rem;
     padding : 15px 0px;
+}
+
+.dimmer{
+    background: rgba(0,0,0,0.7);
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.dimmer.opened{
+    opacity : 1;
+    pointer-events: all;
 }

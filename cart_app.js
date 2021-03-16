@@ -2,8 +2,9 @@
 //Selectors and variable declarations
 
 const openCartButton = document.querySelector(".cart");
-const cartModal = document.querySelector(".cart-page");
+const cartModal = document.querySelector(".cart-page-wrapper");
 const closeCartButton = document.querySelector(".close-cart");
+const dimmers = document.querySelectorAll(".dimmer");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;
@@ -17,6 +18,11 @@ const amount = document.querySelectorAll(".amount");
 
 openCartButton.addEventListener("click" , ()=> {
     cartModal.classList.add("opened");
+    
+    dimmers.forEach((dimmer) => {
+        dimmer.classList.add("opened");
+    });
+
 });
 
 cartModal.addEventListener("click" , (e)=> {
@@ -24,6 +30,10 @@ cartModal.addEventListener("click" , (e)=> {
 
     if(clickedButton.classList.contains("close-cart")){
         cartModal.classList.remove("opened");
+        
+        dimmers.forEach((dimmer) => {
+            dimmer.classList.remove("opened");
+        })
     }
 });
 
