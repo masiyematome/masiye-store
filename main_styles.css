@@ -8,6 +8,7 @@
     --grey-color : rgb(61, 61, 61);
     --yellow-color : #fab83e;
     --light-grey : rgb(243, 243, 243);
+    --hover-yellow : #d8a13a;
 }
 
 button{
@@ -187,6 +188,10 @@ header{
 }
 
 /**Main part of the project starts here**/
+
+main{
+    position: relative;
+}
 
 /*landing page starte here*/
 
@@ -501,33 +506,49 @@ select{
 /**Cart page starts here**/
 
 .cart-page{
-    /* display : none; */
+    display : none;
     padding : 15px;
+    position: fixed;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    width : 95%;
+    background-color : white;
+}
+
+.cart-page.opened{
+    display : block;
 }
 
 .cart-heading {
     border-bottom: 2px solid var(--light-grey);
     display : flex;
-    justify-content: space-between;
+    align-items: stretch;
 }
 
-.cart-heading h2{
+.cart-body h2{
     color : var(--grey-color);
     position : relative;
     padding : 0px 0px 15px;
+    font-size : 1.4rem;
 }
 
 .close-cart{
-    font-size : 2rem;
-    color : var(--grey-color);
+    font-size : 1rem;
+    color : white;
+    margin-left: auto;
+    background-color : var(--yellow-color);
+    align-self: center;
+    padding : 8px;
 }
 
 .close-cart:hover{
-    color : grey;
+    background-color : var(--hover-yellow);
 }
 
 .cart-body{
     min-height: 200px;
+    padding : 20px 0px;
 }
 
 .cart-footer{
@@ -539,11 +560,13 @@ select{
 .cart-footer p{
     padding : 15px 0px;
     display : flex;
+    font-size : 0.85rem;
 }
 
 .cart-footer p .total-price-text{
     margin-left : auto;
-    font-size : 1.2rem;
+    font-size : 1rem;
+    font-weight : bold;
 }
 
 .proceed-to-checkout{
@@ -555,7 +578,7 @@ select{
 }
 
 .proceed-to-checkout:hover{
-    background-color : #d8a13a;
+    background-color : var(--hover-yellow);
 }
 
 /**Contact us page starts here**/

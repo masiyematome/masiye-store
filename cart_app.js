@@ -3,6 +3,7 @@
 
 const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page");
+const closeCartButton = document.querySelector(".close-cart");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;
@@ -15,8 +16,16 @@ const amount = document.querySelectorAll(".amount");
 //Functions
 
 openCartButton.addEventListener("click" , ()=> {
-    cartModal.style.display = "block";
-})
+    cartModal.classList.add("opened");
+});
+
+cartModal.addEventListener("click" , (e)=> {
+    const clickedButton = e.target;
+
+    if(clickedButton.classList.contains("close-cart")){
+        cartModal.classList.remove("opened");
+    }
+});
 
 
 /**A button for cart calculations */
