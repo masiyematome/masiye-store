@@ -67,16 +67,41 @@ storeItems.forEach((storeItem) => {
              /**Add the clicked item to cart **/
 
                 const storeItemName = storeItem.children[0].innerText;
+                const storeImageContainer = storeItem.children[3];
+                const storeItemImage = storeImageContainer.children[0].src;
 
                 const itemInCart = document.createElement("div");
                 itemInCart.className = "new-cart-item";
+
+                const cartItemFirstPart = document.createElement("div");
+                cartItemFirstPart.className = "cart-item-first-part";
+
+                const itemInCartImageHolder = document.createElement("div");
+                itemInCartImageHolder.className = "cart-item-image-holder";
+                cartItemFirstPart.appendChild(itemInCartImageHolder);
+
+                const itemInCartImage = document.createElement("img");
+                itemInCartImage.className = "cart-item-image";
+                itemInCartImage.src = storeItemImage;
+                itemInCartImageHolder.appendChild(itemInCartImage);
+
+                const cartItemFirstPartTexts = document.createElement("div");
+                cartItemFirstPartTexts.className - "cart-item-first-part-texts";
                 
                 const itemInCartName = document.createElement("h4");
-                itemInCartName.className = "new-item-name";
+                itemInCartName.className = "cart-item-name";
                 itemInCartName.innerText = storeItemName;
-                itemInCart.appendChild(itemInCartName);
-    
-                addedItemsCard.appendChild(itemInCartName);
+                cartItemFirstPartTexts.appendChild(itemInCartName);
+
+                const itemInCartPrice = document.createElement("h4");
+                itemInCartPrice.className = "cart-item-price";
+                itemInCartPrice.innerText = "R" + itemPriceAmount.innerText;
+                cartItemFirstPartTexts.appendChild(itemInCartPrice);
+                
+                cartItemFirstPart.appendChild(cartItemFirstPartTexts);
+
+                itemInCart.appendChild(cartItemFirstPart);
+                addedItemsCard.appendChild(itemInCart);
 
         }
 
