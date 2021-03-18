@@ -3,8 +3,6 @@
 
 const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page-wrapper");
-const closeCartButton = document.querySelector(".close-cart");
-const dimmers = document.querySelectorAll(".dimmer");
 const addedItemsCard = document.querySelector(".added-items");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
@@ -13,17 +11,10 @@ let numberOfItems = 0;
 const totalPriceTexts = document.querySelectorAll(".total-price-text");
 let totalPrice = 0;
 
-const amount = document.querySelectorAll(".amount");
-
 //Functions
 
 openCartButton.addEventListener("click" , ()=> {
     cartModal.classList.add("opened");
-    
-    dimmers.forEach((dimmer) => {
-        dimmer.classList.add("opened");
-    });
-
 });
 
 cartModal.addEventListener("click" , (e)=> {
@@ -31,10 +22,6 @@ cartModal.addEventListener("click" , (e)=> {
 
     if(clickedButton.classList.contains("close-cart")){
         cartModal.classList.remove("opened");
-        
-        dimmers.forEach((dimmer) => {
-            dimmer.classList.remove("opened");
-        })
     }
 });
 
@@ -54,7 +41,7 @@ storeItems.forEach((storeItem) => {
             numberOfItems = numberOfItems + 1;
 
             totalPrice = totalPrice + parseFloat(itemPriceAmount.innerText);
-            
+                        
             clicked.classList.add("added-to-cart");
 
             clicked.innerHTML = '<i class = "fa fa-check"></i>' + "Added to Cart";
@@ -97,10 +84,19 @@ storeItems.forEach((storeItem) => {
                 itemInCartPrice.className = "cart-item-price";
                 itemInCartPrice.innerText = "R" + itemPriceAmount.innerText;
                 cartItemFirstPartTexts.appendChild(itemInCartPrice);
+
+                const cartItemSecondPart = document.createElement("div");
+                cartItemSecondPart.className = "cart-item-second-part";
+
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "delete-item-button";
+                deleteButton.innerHTML = '<i class = "fa fa-trash"></i>';
+                cartItemSecondPart.appendChild(deleteButton);
                 
                 cartItemFirstPart.appendChild(cartItemFirstPartTexts);
 
                 itemInCart.appendChild(cartItemFirstPart);
+                itemInCart.appendChild(cartItemSecondPart);
                 addedItemsCard.appendChild(itemInCart);
 
         }
@@ -123,3 +119,14 @@ storeItems.forEach((storeItem) => {
     });
 });
 
+addedItemsCard.addEventListener("click" , (e) => {
+    const clicked = e.target;
+
+    if(clicked.classList.contains("delete-item-button")){
+        const cartItemSecondDiv = clicked.parentElement;
+        const cartItem = cartItemSecondDiv.parentElement;
+
+        cartItem.remove();
+
+    }
+})
