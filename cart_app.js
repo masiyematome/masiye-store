@@ -11,6 +11,8 @@ let numberOfItems = 0;
 const totalPriceTexts = document.querySelectorAll(".total-price-text");
 let totalPrice = 0;
 
+
+
 //Functions
 
 openCartButton.addEventListener("click" , ()=> {
@@ -124,11 +126,10 @@ storeItems.forEach((storeItem) => {
                 addedItemsCard.appendChild(itemInCart);
 
                 updateNumberOfItems();
-        updateTotalPriceAmount();
+                updateTotalPriceAmount();
 
         }
     
-
     });
 });
 
