@@ -25,6 +25,30 @@ cartModal.addEventListener("click" , (e)=> {
     }
 });
 
+function updateNumberOfItems(){
+    if(numberOfItems > 1){
+        numberOfItemsText[0].innerText = numberOfItems + " Items - ";
+        numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
+    }
+
+    else if (numberOfItems == 0) {
+        totalPrice = 0;
+        numberOfItemsText[0].innerText = numberOfItems + " Items - ";
+        numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
+    }
+
+    else {
+        numberOfItemsText[0].innerText = numberOfItems + " Item - ";
+        numberOfItemsText[1].innerText = "(" + numberOfItems + " item" + ")";
+    }
+}
+
+function updateTotalPriceAmount(){
+    totalPriceTexts.forEach((totalPriceText) => {
+
+        totalPriceText.innerText = "  R" + (totalPrice).toFixed(2);
+    })
+}
 
 /**A button for cart calculations */
 
@@ -99,22 +123,11 @@ storeItems.forEach((storeItem) => {
                 itemInCart.appendChild(cartItemSecondPart);
                 addedItemsCard.appendChild(itemInCart);
 
+                updateNumberOfItems();
+        updateTotalPriceAmount();
+
         }
-
-
-        if (numberOfItems == 0 || numberOfItems > 1) {
-            numberOfItemsText[0].innerText = numberOfItems + " Items - ";
-            numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
-        }
-
-        else {
-            numberOfItemsText[0].innerText = numberOfItems + " Item - ";
-            numberOfItemsText[1].innerText = "(" + numberOfItems + " item" + ")";
-        }
-
-        totalPriceTexts.forEach((totalPriceText) => {
-            totalPriceText.innerText = "  R" + (totalPrice).toFixed(2);
-        })
+    
 
     });
 });
@@ -135,27 +148,9 @@ addedItemsCard.addEventListener("click" , (e) => {
         numberOfItems = numberOfItems - 1;
 
         totalPrice = totalPrice - cartItemPrice;
-
-        if(numberOfItems > 1){
-            numberOfItemsText[0].innerText = numberOfItems + " Items - ";
-            numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
-        }
-
-        else if (numberOfItems == 0) {
-            totalPrice = 0;
-            numberOfItemsText[0].innerText = numberOfItems + " Items - ";
-            numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
-        }
-
-        else {
-            numberOfItemsText[0].innerText = numberOfItems + " Item - ";
-            numberOfItemsText[1].innerText = "(" + numberOfItems + " item" + ")";
-        }
-
-        totalPriceTexts.forEach((totalPriceText) => {
-
-            totalPriceText.innerText = "  R" + (totalPrice).toFixed(2);
-        })
+        
+        updateNumberOfItems();
+        updateTotalPriceAmount();
 
     }
 })
