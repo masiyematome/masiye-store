@@ -17,6 +17,7 @@ let totalPrice = 0;
 
 openCartButton.addEventListener("click" , ()=> {
     cartModal.classList.add("opened");
+    document.body.style.overflow = "hidden";
 });
 
 cartModal.addEventListener("click" , (e)=> {

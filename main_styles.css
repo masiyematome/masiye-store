@@ -21,6 +21,7 @@ button{
 
 html,body{
     scroll-behavior: smooth;
+    position: relative;
 }
 
 /**Header part of the project starts here**/
@@ -509,24 +510,34 @@ select{
 .cart-page-wrapper{
     padding : 15px;
     position : fixed;
-    top : 100px;
+    top : 0px;
     width : 95%;
     height : 100vh;
     background-color : white;
     z-index : 4;
-    display : none;
+    opacity: 0;
+    pointer-events: none;
     overflow-y: scroll;
     overflow-x : scroll;
+    transform: scale(0.8);
+    transition: all ease 0.5s;
 }
 
 .cart-page-wrapper.opened{
-    display: block;
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
 }
 
 .cart-heading {
     border-bottom: 2px solid var(--light-grey);
     display : flex;
     align-items: stretch;
+}
+
+.cart-body{
+    min-height: 200px;
+    padding : 20px 0px;
 }
 
 .cart-body h2{
@@ -576,6 +587,7 @@ select{
 
 .cart-item-name,.cart-item-price{
     padding : 0px 8px;
+    font-size : 0.9rem;
 }
 
 .delete-item-button{
@@ -607,11 +619,6 @@ select{
 
 .close-cart:hover{
     background-color : var(--hover-yellow);
-}
-
-.cart-body{
-    min-height: 200px;
-    padding : 20px 0px;
 }
 
 .cart-footer{
