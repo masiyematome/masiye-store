@@ -82,7 +82,7 @@ storeItems.forEach((storeItem) => {
 
                 const itemInCartPrice = document.createElement("h4");
                 itemInCartPrice.className = "cart-item-price";
-                itemInCartPrice.innerText = "R" + itemPriceAmount.innerText;
+                itemInCartPrice.innerText = itemPriceAmount.innerText;
                 cartItemFirstPartTexts.appendChild(itemInCartPrice);
 
                 const cartItemSecondPart = document.createElement("div");
@@ -127,6 +127,35 @@ addedItemsCard.addEventListener("click" , (e) => {
         const cartItem = cartItemSecondDiv.parentElement;
 
         cartItem.remove();
+
+        const cartItemFirstDiv = cartItem.children[0];
+        const cartItemFirstDivTexts = cartItemFirstDiv.children[1];
+        const cartItemPrice = cartItemFirstDivTexts.children[1].innerText;
+
+        numberOfItems = numberOfItems - 1;
+
+        totalPrice = totalPrice - cartItemPrice;
+
+        if(numberOfItems > 1){
+            numberOfItemsText[0].innerText = numberOfItems + " Items - ";
+            numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
+        }
+
+        else if (numberOfItems == 0) {
+            totalPrice = 0;
+            numberOfItemsText[0].innerText = numberOfItems + " Items - ";
+            numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
+        }
+
+        else {
+            numberOfItemsText[0].innerText = numberOfItems + " Item - ";
+            numberOfItemsText[1].innerText = "(" + numberOfItems + " item" + ")";
+        }
+
+        totalPriceTexts.forEach((totalPriceText) => {
+
+            totalPriceText.innerText = "  R" + (totalPrice).toFixed(2);
+        })
 
     }
 })
