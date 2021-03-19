@@ -301,18 +301,15 @@ select{
     display : none;
 }
 
-.store-item:nth-of-type(1){
-    margin-top : 30px;
-}
-
 .store-item{
-    border-bottom : 1px solid rgb(204, 204, 204);
+    border-bottom: 2px solid rgb(204, 204, 204);
     margin-top : 40px;
+    border-radius : 4px;
 }
 
 .store-item .item-spec{
     font-size : 0.8rem;
-    display : inline;
+    display : inline-block;
 }
 
 .see-more{
@@ -335,10 +332,12 @@ select{
 
 .store-item .image-container{
     overflow: hidden;
+    height : 240px;
 }
 
 .store-item img{
     width : 100%;
+    height : 100%;
     cursor: pointer;
     transition: all ease 0.8s;
 }
@@ -463,6 +462,8 @@ select{
 
 .testimonials{
     padding : 30px 0px 15px;
+    width : 100%;
+    margin : auto;
 }
 
 .testimonial{
@@ -724,5 +725,60 @@ footer{
 .intro-text{
     font-size : 0.8rem;
     padding : 15px 0px;
+}
+
+/**Media queries**/
+
+@media only screen and (min-width : 700px){
+    .store-items{
+        display : grid;
+        grid-template-columns: repeat(2 , 0.5fr);
+        grid-gap : 5%;
+        padding : 25px 0px 0px;
+    }
+
+    .about{
+        display : flex;
+        justify-content: space-between;
+    }
+
+    .about .image-wrapper , .about .about-texts{
+        flex : 0.49;
+    }
+
+    .store-item{
+        margin-top : 0px;
+    }
+
+    .store-item .image-container{
+        height : 200px;
+    }
+
+    .pagination{
+        padding : 80px 0px 0px;
+    }
+
+    .testimonials{
+        width : 85%;
+    }
+
+    .cart-page-wrapper{
+        width : 97%;
+    }
+
+    .communication-channels{
+        display : flex;
+        justify-content : space-evenly;
+    }
+
+    .map{
+        width : 85%;
+        margin : auto;
+    }
+
+    .map iframe{
+        height : 300px;
+    }
+
 }
 
