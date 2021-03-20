@@ -262,9 +262,13 @@ main{
     padding : 8px 0px;
 }
 
-.about-texts span{
+.about-texts .goto-store{
     color : var(--yellow-color);
     text-decoration: underline;
+}
+
+.about-texts .goto-store:hover{
+    text-decoration: none;
 }
 
 .about-texts .fa{
@@ -668,7 +672,6 @@ footer{
 }
 
 .communication-channel{
-    padding: 0px 8px;
     text-align: center;
     padding : 25px 0px 0px;
 }
@@ -758,10 +761,6 @@ footer{
         padding : 80px 0px 0px;
     }
 
-    .testimonials{
-        width : 85%;
-    }
-
     .cart-page-wrapper{
         width : 97%;
     }
@@ -771,13 +770,12 @@ footer{
         justify-content : space-evenly;
     }
 
-    .map{
-        width : 85%;
-        margin : auto;
-    }
-
     .map iframe{
         height : 300px;
+    }
+
+    .scroll-to-top{
+        right : 1.8%;
     }
 
 }
@@ -846,21 +844,38 @@ footer{
         padding : 100px 0px 0px;
     }
 
-    .testimonials{
-        width : 75%;
-    }
-
     .social-and-map{
         display : flex;
         justify-content: space-between;
+        padding : 50px 0px 0px;
     }
 
     .communication-channels{
+        padding : 0px;
         flex-direction: column;
+    }
+
+    .communication-channel{
+        padding : 0px;
+        text-align : left;
+        display: flex;
+        align-items: center;
+    }
+
+    .communication-channel h4{
+        display : none;
+    }
+
+    .communication-channel p{
+        padding : 0px 8px;
     }
 
     .communication-channel,.map{
         flex : 0.99;
+    }
+
+    .scroll-to-top{
+        right : 1.5%;
     }
 
 }
