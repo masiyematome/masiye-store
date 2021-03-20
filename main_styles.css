@@ -523,7 +523,6 @@ select{
     opacity: 0;
     pointer-events: none;
     overflow-y: scroll;
-    overflow-x : scroll;
     transform: scale(0.8);
     transition: all ease 0.5s;
 }
@@ -615,7 +614,7 @@ select{
     margin-left: auto;
     background-color : var(--yellow-color);
     align-self: center;
-    padding : 8px;
+    padding : 0px 8px;
 }
 
 .close-cart .fa{
@@ -733,10 +732,7 @@ footer{
 /**Media queries**/
 
 @media only screen and (min-width : 700px){
-    .navbar-toggler{
-        display : none;
-    }
-    
+
     .store-items{
         display : grid;
         grid-template-columns: repeat(2 , 0.5fr);
@@ -786,6 +782,10 @@ footer{
 
 @media only screen and (min-width : 992px){
 
+    .navbar-toggler{
+        display: none;
+    }
+
     .nav-bar{
         display: flex;
         align-items: center;
@@ -829,6 +829,7 @@ footer{
     }
 
     .cart{
+        padding : 10px 0px;
         position: relative;
         bottom : 0%;
     }
@@ -882,13 +883,26 @@ footer{
 }
 
 @media only screen and (min-width : 1024px){
+
+    .title-bar{
+        font-size : 1.6rem;
+    }
+
     .store-item .image-container{
         height : 350px;
     }
-}
 
-@media only screen and (min-width : 1920px){
-    .store-item .image-container{
-        height : 550px;
+    .cart-page-wrapper{
+        width : 98%;
     }
+
+    .close-cart{
+        font-size : 1.4rem;
+        font-weight : bold;
+    }
+
+    .testimonials{
+        width : 80%;
+    }
+
 }
