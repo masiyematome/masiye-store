@@ -751,7 +751,7 @@ footer{
     }
 
     .store-item .image-container{
-        height : 200px;
+        height : 240px;
     }
 
     .pagination{
@@ -778,6 +778,89 @@ footer{
 
     .map iframe{
         height : 300px;
+    }
+
+}
+
+@media only screen and (min-width : 992px){
+
+    .nav-bar{
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-bar .title-bar{
+        flex-basis : 50%;
+    }
+
+    .navbar-links{
+        opacity: 1;
+        position: relative;
+        background-color: transparent;
+        height : inherit;
+        display : flex;
+        align-items: center;
+        padding : 0px;
+    }
+
+    #main-menu{
+        background-color: transparent;
+        width : 100%;
+        position : absolute;
+        height: inherit;
+        display : flex;
+        padding: 0px;
+    }
+
+    #main-menu li{
+        display : inline-block;
+    }
+
+    #main-menu li:nth-of-type(6){
+        margin-left : auto;
+    }
+
+    #main-menu a{
+        color : var(--grey-color);
+        padding : 0px 10px;
+    }
+
+    .cart{
+        position: relative;
+        bottom : 0%;
+    }
+
+    .cart p,.cart .fa{
+        color : var(--grey-color);
+    }
+
+    .navbar-toggler{
+        display : none;
+    }
+
+    .store-item .image-container{
+        height : 300px;
+    }
+
+    .pagination{
+        padding : 100px 0px 0px;
+    }
+
+    .testimonials{
+        width : 75%;
+    }
+
+    .social-and-map{
+        display : flex;
+        justify-content: space-between;
+    }
+
+    .communication-channels{
+        flex-direction: column;
+    }
+
+    .communication-channel,.map{
+        flex : 0.99;
     }
 
 }
