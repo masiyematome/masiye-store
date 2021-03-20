@@ -733,6 +733,10 @@ footer{
 /**Media queries**/
 
 @media only screen and (min-width : 700px){
+    .navbar-toggler{
+        display : none;
+    }
+    
     .store-items{
         display : grid;
         grid-template-columns: repeat(2 , 0.5fr);
@@ -799,6 +803,7 @@ footer{
         display : flex;
         align-items: center;
         padding : 0px;
+        pointer-events: all;
     }
 
     #main-menu{
@@ -830,10 +835,6 @@ footer{
 
     .cart p,.cart .fa{
         color : var(--grey-color);
-    }
-
-    .navbar-toggler{
-        display : none;
     }
 
     .store-item .image-container{
@@ -880,3 +881,14 @@ footer{
 
 }
 
+@media only screen and (min-width : 1024px){
+    .store-item .image-container{
+        height : 350px;
+    }
+}
+
+@media only screen and (min-width : 1920px){
+    .store-item .image-container{
+        height : 550px;
+    }
+}
