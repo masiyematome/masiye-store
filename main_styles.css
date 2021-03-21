@@ -542,6 +542,7 @@ select{
 .cart-body{
     min-height: 200px;
     padding : 20px 0px;
+    position : relative;
 }
 
 .cart-body h2{
@@ -558,6 +559,15 @@ select{
     border : 1px solid var(--light-grey);
     left : 0;
     bottom : 0;
+}
+
+.empty-cart-text{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    font-size : 1.2rem;
+    color : var(--grey-color);
 }
 
 .cart-body .added-items{
@@ -901,8 +911,9 @@ footer{
         font-weight : bold;
     }
 
-    .testimonials{
+    .about,.store,.testimonials-page,.contact{
         width : 80%;
+        margin : auto;
     }
 
 }

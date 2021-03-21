@@ -4,6 +4,7 @@
 const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page-wrapper");
 const addedItemsCard = document.querySelector(".added-items");
+const emptyCartText = document.querySelector(".empty-cart-text");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;
@@ -38,6 +39,7 @@ function updateNumberOfItems(){
         totalPrice = 0;
         numberOfItemsText[0].innerText = numberOfItems + " Items - ";
         numberOfItemsText[1].innerText = "(" + numberOfItems + " items" + ")";
+        emptyCartText.style.display = "block";
     }
 
     else {
@@ -128,6 +130,8 @@ storeItems.forEach((storeItem) => {
 
                 updateNumberOfItems();
                 updateTotalPriceAmount();
+
+                emptyCartText.style.display = "none";
 
         }
     
