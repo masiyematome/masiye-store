@@ -917,3 +917,10 @@ footer{
     }
 
 }
+
+@media only screen and (min-width : 1920px){
+    .about,.store,.testimonials-page,.contact{
+        width : 60%;
+        margin : auto;
+    }
+}

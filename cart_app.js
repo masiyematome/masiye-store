@@ -109,6 +109,8 @@ storeItems.forEach((storeItem) => {
                 itemInCartName.innerText = storeItemName;
                 cartItemFirstPartTexts.appendChild(itemInCartName);
 
+                saveToLocalStorage(storeItemName);
+
                 const itemInCartPrice = document.createElement("h4");
                 itemInCartPrice.className = "cart-item-price";
                 itemInCartPrice.innerText = itemPriceAmount.innerText;
@@ -160,3 +162,23 @@ addedItemsCard.addEventListener("click" , (e) => {
 
     }
 })
+
+/****Json local storage implementation***/
+
+/*Function for storing items in the local storage*/
+
+function saveToLocalStorage(item){
+    let items;
+
+    if(localStorage.getItem("items") === null){
+        items = [];
+    }
+
+    else{
+        items = JSON.parse(localStorage.getItem("items"));
+    }
+
+    items.push(item);
+    localStorage.setItem("items",JSON.stringify(items));
+
+}
