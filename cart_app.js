@@ -5,13 +5,13 @@ const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page-wrapper");
 const addedItemsCard = document.querySelector(".added-items");
 const emptyCartText = document.querySelector(".empty-cart-text");
+const storeItemImages = document.querySelectorAll(".store-item-image");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;
 
 const totalPriceTexts = document.querySelectorAll(".total-price-text");
 let totalPrice = 0;
-
 
 
 //Functions
@@ -61,9 +61,7 @@ storeItems.forEach((storeItem) => {
     storeItem.addEventListener("click" , (e) => {
         
         const clicked = e.target;
-        const underImageContent = storeItem.children[4];
-        const itemPrice = underImageContent.children[0];
-        const itemPriceAmount = itemPrice.children[1];
+        const itemPriceAmount = storeItem.querySelector(".amount");
 
 
         if (clicked.classList.contains("add-to-cart")) {
@@ -82,9 +80,8 @@ storeItems.forEach((storeItem) => {
 
              /**Add the clicked item to cart **/
 
-                const storeItemName = storeItem.children[0].innerText;
-                const storeImageContainer = storeItem.children[3];
-                const storeItemImage = storeImageContainer.children[0].src;
+                const storeItemName = storeItem.querySelector(".store-item-name").innerText;
+                const storeItemImage = storeItem.querySelector("img").src;
 
                 const itemInCart = document.createElement("div");
                 itemInCart.className = "new-cart-item";
@@ -109,11 +106,9 @@ storeItems.forEach((storeItem) => {
                 itemInCartName.innerText = storeItemName;
                 cartItemFirstPartTexts.appendChild(itemInCartName);
 
-                saveToLocalStorage(storeItemName);
-
                 const itemInCartPrice = document.createElement("h4");
                 itemInCartPrice.className = "cart-item-price";
-                itemInCartPrice.innerText = itemPriceAmount.innerText;
+                itemInCartPrice.innerText = "R" + itemPriceAmount.innerText;
                 cartItemFirstPartTexts.appendChild(itemInCartPrice);
 
                 const cartItemSecondPart = document.createElement("div");
@@ -163,22 +158,3 @@ addedItemsCard.addEventListener("click" , (e) => {
     }
 })
 
-/****Json local storage implementation***/
-
-/*Function for storing items in the local storage*/
-
-function saveToLocalStorage(item){
-    let items;
-
-    if(localStorage.getItem("items") === null){
-        items = [];
-    }
-
-    else{
-        items = JSON.parse(localStorage.getItem("items"));
-    }
-
-    items.push(item);
-    localStorage.setItem("items",JSON.stringify(items));
-
-}
