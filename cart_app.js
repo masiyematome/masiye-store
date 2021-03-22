@@ -5,7 +5,6 @@ const openCartButton = document.querySelector(".cart");
 const cartModal = document.querySelector(".cart-page-wrapper");
 const addedItemsCard = document.querySelector(".added-items");
 const emptyCartText = document.querySelector(".empty-cart-text");
-const storeItemImages = document.querySelectorAll(".store-item-image");
 
 const numberOfItemsText = document.querySelectorAll(".number-of-items-text");
 let numberOfItems = 0;

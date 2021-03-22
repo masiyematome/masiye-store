@@ -894,12 +894,16 @@ footer{
 
 @media only screen and (min-width : 1024px){
 
+    .landing-page{
+        padding: 60px 15px;
+    }
+
     .title-bar{
         font-size : 1.6rem;
     }
 
     .store-item .image-container{
-        height : 350px;
+        height : 270px;
     }
 
     .cart-page-wrapper{
@@ -918,7 +922,19 @@ footer{
 
 }
 
+@media only screen and (min-width : 1280px){
+    .store-item .image-container{
+        height : 300px;
+    }
+}
+
+
 @media only screen and (min-width : 1920px){
+
+    .landing-page{
+        padding: 100px 15px 80px;
+    }
+
     .about,.store,.testimonials-page,.contact{
         width : 60%;
         margin : auto;
