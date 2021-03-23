@@ -34,7 +34,7 @@ header{
 }
 
 .header-top {
-    padding : 0px 15px;
+    padding : 0px 15px 8px;
     display : flex;
     flex-direction: column;
     align-items: flex-end;
@@ -63,9 +63,18 @@ header{
     caret-color: var(--grey-color);
     color : var(--grey-color);
     outline : none;
-    border : none;
-    border-top : 1px solid var(--light-grey);
+    border: 1.5px solid rgb(212, 212, 212);
     padding : 5px 0px;
+    border-radius : 4px;
+}
+
+.input-alert{
+    display : block;
+    font-size : 0.7rem;
+    align-self: center;
+    padding : 5px;
+    color : indianred;
+    display : none;
 }
 
 .toggle-able{
@@ -154,6 +163,7 @@ header{
     bottom : 40%;
     cursor: pointer;
     transition: all ease 0.5s;
+    border-radius : 4px;
 }
 
 .cart .fa{
@@ -230,6 +240,7 @@ main{
     color : white;
     background-color : var(--yellow-color);
     padding : 5px 15px;
+    border-radius : 4px;
 }
 
 .landing-page a:hover{
@@ -305,10 +316,29 @@ select{
     display : none;
 }
 
+.store-items{
+    position : relative;
+}
+
+.no-result-found{
+    font-weight : lighter;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    padding : 25px 0px;
+    color : grey;
+    display : none;
+}
+
 .store-item{
     border-bottom: 2px solid rgb(204, 204, 204);
     margin-top : 40px;
     border-radius : 4px;
+}
+
+.showing{
+    display : block;
 }
 
 .store-item .item-spec{
@@ -370,6 +400,7 @@ select{
     padding : 0px 5px;
     font-weight : 600;
     font-size: 0.8rem;
+    border-radius : 4px;
 }
 
 .add-to-cart .fa{
@@ -427,6 +458,7 @@ select{
     cursor: pointer;
     transition : all ease 0.8s;
     text-decoration: none;
+    border-radius : 4px;
 }
 
 .pagination a .fa{
@@ -452,6 +484,7 @@ select{
     color : white;
     transition: all ease 0.5s;
     z-index : 1;
+    border-radius : 4px;
 }
 
 .scroll-to-top:hover{
@@ -475,6 +508,7 @@ select{
     justify-content: space-between;
     padding : 15px 10px;
     background-color: rgb(252, 252, 252);
+    border-radius : 4px;
 }
 
 .testimonial-image{
@@ -591,7 +625,7 @@ select{
 .cart-item-image-holder{
     border : 2px solid var(--yellow-color);
     width : 100px;
-    height : auto;
+    height : 70px;
 }
 
 .cart-item-image{
@@ -703,6 +737,7 @@ footer{
 .map iframe{
     width : 100%;
     height : 300px;
+    border-radius : 4px;
 }
 
 .footer-band{
