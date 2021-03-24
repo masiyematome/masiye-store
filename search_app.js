@@ -20,8 +20,11 @@ searchButton.addEventListener("click" , () => {
                     storeItem.style.display = "block";
                     searchInput.classList.remove("toggle-able");
 
-                    location.href = "#";
-                    location.href = "#Store";
+                    const y = storeItem.getBoundingClientRect().top + window.scrollY;
+                    window.scroll({
+                        top: y,
+                        behavior: 'smooth'
+                    });
 
                 }
     
