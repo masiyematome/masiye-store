@@ -98,8 +98,11 @@ function paginate(ev){
                 }
             }
 
-        storeSection.scrollIntoView();
+            const sizeOfItem = storeSection.getBoundingClientRect();
 
+            window.scroll({
+                top: sizeOfItem.top + window.scrollY,
+            });
 
         }
     };

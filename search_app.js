@@ -5,7 +5,7 @@ const searchInput = document.querySelector(".search-input");
 const inputAlert = document.querySelector(".input-alert");
 const noResultFoundText = document.querySelector(".no-result-found");
 
-searchButton.addEventListener("click" , () => {
+searchButton.addEventListener("click" , (e) => {
     if(searchInput.classList.contains("toggle-able")){
         storeItems.forEach((storeItem) => {
             const storeItemName = storeItem.querySelector(".store-item-name").innerText.toLowerCase();
@@ -20,11 +20,12 @@ searchButton.addEventListener("click" , () => {
                     storeItem.style.display = "block";
                     searchInput.classList.remove("toggle-able");
 
-                    const y = storeItem.getBoundingClientRect().top + window.scrollY;
+                    const sizeOfItem = storeSection.getBoundingClientRect();
+
                     window.scroll({
-                        top: y,
-                        behavior: 'smooth'
+                        top: sizeOfItem.top + window.scrollY,
                     });
+                    
 
                 }
     

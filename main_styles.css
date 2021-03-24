@@ -550,7 +550,7 @@ select{
     padding : 15px;
     position : fixed;
     top : 0px;
-    width : 95%;
+    width : 92%;
     height : 100vh;
     background-color : white;
     z-index : 4;
@@ -600,7 +600,7 @@ select{
     top : 50%;
     left : 50%;
     transform: translate(-50%,-50%);
-    font-size : 1.2rem;
+    font-size : 1rem;
     color : var(--grey-color);
 }
 
@@ -653,7 +653,7 @@ select{
 }
 
 .close-cart{
-    font-size : 1rem;
+    font-size : 1.4rem;
     color : white;
     margin-left: auto;
     background-color : var(--yellow-color);
