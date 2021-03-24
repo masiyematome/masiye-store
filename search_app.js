@@ -19,13 +19,15 @@ searchButton.addEventListener("click" , () => {
                 if(storeItemName.includes(searchInputText)){
                     storeItem.style.display = "block";
                     searchInput.classList.remove("toggle-able");
-                    storeItem.scrollIntoView();
+
+                    location.href = "#";
+                    location.href = "#Store";
 
                 }
     
                 else{
                     storeItem.style.display = "none";
-                    storeSection.scrollIntoView();
+                    // storeSection.scrollIntoView();
                 }
             }
 
