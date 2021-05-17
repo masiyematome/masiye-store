@@ -17,7 +17,7 @@ searchButton.addEventListener("click" , (e) => {
 
             else{
                 if(storeItemName.includes(searchInputText)){
-                    storeItem.style.display = "block";
+                    storeItem.classList.remove("displaying-items");
                     searchInput.classList.remove("toggle-able");
 
                     const sizeOfItem = storeSection.getBoundingClientRect();
@@ -25,13 +25,18 @@ searchButton.addEventListener("click" , (e) => {
                     window.scroll({
                         top: sizeOfItem.top + window.scrollY,
                     });
-                    
+
 
                 }
     
                 else{
-                    storeItem.style.display = "none";
-                    // storeSection.scrollIntoView();
+                    storeItem.classList.add("displaying-items");
+
+                    const sizeOfItem = storeSection.getBoundingClientRect();
+                    
+                    window.scroll({
+                        top: sizeOfItem.top + window.scrollY,
+                    });
                 }
             }
 
